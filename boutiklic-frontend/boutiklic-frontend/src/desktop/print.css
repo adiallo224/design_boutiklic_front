@@ -1,0 +1,18 @@
+/* Feuille de style d'impression bureau — W15 (journal de caisse), W18 (liste de courses) et les
+   reçus (règle "Comportements bureau à implémenter"). Chaque écran imprimable enveloppe sa zone
+   imprimable dans `.print-area` ; tout le reste de la chrome bureau est masqué. */
+@media print {
+  .desktop-sidebar,
+  .desktop-topbar,
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background: #fff;
+  }
+
+  .print-area {
+    padding: 0;
+  }
+}

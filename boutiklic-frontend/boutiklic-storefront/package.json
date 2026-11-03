@@ -1,0 +1,25 @@
+{
+  "name": "boutiklic-storefront",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Vitrine publique multi-sites de Boutiklic (Next.js). Volontairement HORS des workspaces npm de la racine (son propre package-lock.json).",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "next": "16.4.3",
+    "react": "19.1.0",
+    "react-dom": "19.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.0",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "typescript": "^5.9.0",
+    "vitest": "^3.2.4"
+  }
+}

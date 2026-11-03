@@ -1,0 +1,9 @@
+  --non-interactive is not supported, use $CI=1 instead
+env: load .env
+env: export EXPO_PUBLIC_API_BASE_URL
+Starting project at D:\projet_en_cours\boutiklic\boutiklic-mobile
+› Port 8082 is being used by another process
+Input is required, but 'npx expo' is in non-interactive mode.
+Required input:
+> Use port 8083 instead?
+› Skipping dev server

@@ -1,0 +1,559 @@
+{
+  "_comment": [
+    "Cas de référence PARTAGÉS entre le serveur (Java) et les clients (TypeScript) : la TVA est calculée aux deux endroits",
+    "(boutiklic-core pour l'enregistrement, packages/shared/src/tax pour l'estimation hors ligne) et les deux DOIVENT donner",
+    "exactement les mêmes résultats. Ce fichier est lu par TaxGoldenCasesTest (Java) et sharedTaxGolden.test.ts (frontend).",
+    "Règle : si la règle de TVA change, on change ce fichier ET les deux implémentations — un test rouge d'un seul côté signale une divergence.",
+    "Montants en chaînes pour éviter toute ambiguïté de flottants. Valeurs attendues de extractTax/summary calculées par BigDecimal (HALF_UP)."
+  ],
+  "currencies": {
+    "GNF": 0,
+    "FCFA": 0,
+    "SLE": 2,
+    "LRD": 2,
+    "GHS": 2,
+    "NGN": 2,
+    "GMD": 2,
+    "CVE": 2,
+    "DZD": 2,
+    "AOA": 2,
+    "BWP": 2,
+    "BIF": 0,
+    "KMF": 0,
+    "CDF": 0,
+    "DJF": 0,
+    "EGP": 2,
+    "ERN": 2,
+    "SZL": 2,
+    "ETB": 2,
+    "KES": 2,
+    "LSL": 2,
+    "LYD": 2,
+    "MGA": 0,
+    "MWK": 0,
+    "MUR": 2,
+    "MRU": 2,
+    "MAD": 2,
+    "MZN": 2,
+    "NAD": 2,
+    "UGX": 0,
+    "RWF": 0,
+    "STN": 2,
+    "SCR": 2,
+    "SOS": 0,
+    "SDG": 0,
+    "SSP": 0,
+    "ZAR": 2,
+    "TZS": 0,
+    "TND": 2,
+    "ZMW": 2,
+    "ZWG": 2
+  },
+  "extractTax": [
+    {
+      "currency": "GNF",
+      "ttc": "118000",
+      "rate": "18",
+      "ht": "100000",
+      "tax": "18000"
+    },
+    {
+      "currency": "GNF",
+      "ttc": "1000",
+      "rate": "5.5",
+      "ht": "948",
+      "tax": "52"
+    },
+    {
+      "currency": "GNF",
+      "ttc": "1",
+      "rate": "100",
+      "ht": "1",
+      "tax": "0"
+    },
+    {
+      "currency": "GNF",
+      "ttc": "3",
+      "rate": "100",
+      "ht": "2",
+      "tax": "1"
+    },
+    {
+      "currency": "GNF",
+      "ttc": "5",
+      "rate": "100",
+      "ht": "3",
+      "tax": "2"
+    },
+    {
+      "currency": "GNF",
+      "ttc": "0",
+      "rate": "18",
+      "ht": "0",
+      "tax": "0"
+    },
+    {
+      "currency": "GNF",
+      "ttc": "1",
+      "rate": "0",
+      "ht": "1",
+      "tax": "0"
+    },
+    {
+      "currency": "GNF",
+      "ttc": "2500000000",
+      "rate": "18",
+      "ht": "2118644068",
+      "tax": "381355932"
+    },
+    {
+      "currency": "GNF",
+      "ttc": "999",
+      "rate": "19.25",
+      "ht": "838",
+      "tax": "161"
+    },
+    {
+      "currency": "GNF",
+      "ttc": "10",
+      "rate": "0.01",
+      "ht": "10",
+      "tax": "0"
+    },
+    {
+      "currency": "GNF",
+      "ttc": "100000",
+      "rate": "99.99",
+      "ht": "50003",
+      "tax": "49997"
+    },
+    {
+      "currency": "GNF",
+      "ttc": "7",
+      "rate": "18",
+      "ht": "6",
+      "tax": "1"
+    },
+    {
+      "currency": "GNF",
+      "ttc": "1500",
+      "rate": "0",
+      "ht": "1500",
+      "tax": "0"
+    },
+    {
+      "currency": "GNF",
+      "ttc": "123456789",
+      "rate": "5.5",
+      "ht": "117020653",
+      "tax": "6436136"
+    },
+    {
+      "currency": "GNF",
+      "ttc": "55",
+      "rate": "10",
+      "ht": "50",
+      "tax": "5"
+    },
+    {
+      "currency": "KES",
+      "ttc": "0.25",
+      "rate": "100",
+      "ht": "0.13",
+      "tax": "0.12"
+    },
+    {
+      "currency": "KES",
+      "ttc": "12.10",
+      "rate": "21",
+      "ht": "10.00",
+      "tax": "2.10"
+    },
+    {
+      "currency": "KES",
+      "ttc": "0.01",
+      "rate": "18",
+      "ht": "0.01",
+      "tax": "0.00"
+    },
+    {
+      "currency": "KES",
+      "ttc": "99999999.99",
+      "rate": "19.25",
+      "ht": "83857442.34",
+      "tax": "16142557.65"
+    },
+    {
+      "currency": "KES",
+      "ttc": "1234567.89",
+      "rate": "5.5",
+      "ht": "1170206.53",
+      "tax": "64361.36"
+    },
+    {
+      "currency": "KES",
+      "ttc": "1.05",
+      "rate": "5",
+      "ht": "1.00",
+      "tax": "0.05"
+    },
+    {
+      "currency": "KES",
+      "ttc": "0.03",
+      "rate": "100",
+      "ht": "0.02",
+      "tax": "0.01"
+    },
+    {
+      "currency": "KES",
+      "ttc": "10.00",
+      "rate": "0",
+      "ht": "10.00",
+      "tax": "0.00"
+    },
+    {
+      "currency": "KES",
+      "ttc": "49.99",
+      "rate": "16",
+      "ht": "43.09",
+      "tax": "6.90"
+    },
+    {
+      "currency": "KES",
+      "ttc": "0.99",
+      "rate": "7.5",
+      "ht": "0.92",
+      "tax": "0.07"
+    }
+  ],
+  "summary": [
+    {
+      "name": "trois taux différents sur un même ticket",
+      "currency": "GNF",
+      "lines": [
+        {
+          "ttc": "118000",
+          "rate": "18"
+        },
+        {
+          "ttc": "10550",
+          "rate": "5.5"
+        },
+        {
+          "ttc": "5000",
+          "rate": "0"
+        }
+      ],
+      "anyTaxed": true,
+      "totalHt": "115000",
+      "totalTax": "18550",
+      "totalTtc": "133550"
+    },
+    {
+      "name": "arrondi PAR LIGNE : trois fois le même montant, pas un arrondi sur le total",
+      "currency": "GNF",
+      "lines": [
+        {
+          "ttc": "1000",
+          "rate": "5.5"
+        },
+        {
+          "ttc": "1000",
+          "rate": "5.5"
+        },
+        {
+          "ttc": "1000",
+          "rate": "5.5"
+        }
+      ],
+      "anyTaxed": true,
+      "totalHt": "2844",
+      "totalTax": "156",
+      "totalTtc": "3000"
+    },
+    {
+      "name": "une ligne sans TVA parmi des lignes taxées : HT = TTC pour elle",
+      "currency": "GNF",
+      "lines": [
+        {
+          "ttc": "118000",
+          "rate": "18"
+        },
+        {
+          "ttc": "2000",
+          "rate": null
+        }
+      ],
+      "anyTaxed": true,
+      "totalHt": "102000",
+      "totalTax": "18000",
+      "totalTtc": "120000"
+    },
+    {
+      "name": "devise à 2 décimales",
+      "currency": "KES",
+      "lines": [
+        {
+          "ttc": "12.10",
+          "rate": "21"
+        },
+        {
+          "ttc": "0.25",
+          "rate": "100"
+        },
+        {
+          "ttc": "99.99",
+          "rate": "16"
+        }
+      ],
+      "anyTaxed": true,
+      "totalHt": "96.33",
+      "totalTax": "16.01",
+      "totalTtc": "112.34"
+    },
+    {
+      "name": "aucune ligne taxée : pas de récapitulatif de TVA côté ticket",
+      "currency": "GNF",
+      "lines": [
+        {
+          "ttc": "1000",
+          "rate": null
+        }
+      ],
+      "anyTaxed": false,
+      "totalHt": "1000",
+      "totalTax": "0",
+      "totalTtc": "1000"
+    },
+    {
+      "name": "des centimes qui tombent sur .5 à chaque ligne : l'arrondi par ligne s'accumule",
+      "currency": "KES",
+      "lines": [
+        {
+          "ttc": "0.03",
+          "rate": "100"
+        },
+        {
+          "ttc": "0.03",
+          "rate": "100"
+        },
+        {
+          "ttc": "0.03",
+          "rate": "100"
+        },
+        {
+          "ttc": "0.03",
+          "rate": "100"
+        }
+      ],
+      "anyTaxed": true,
+      "totalHt": "0.08",
+      "totalTax": "0.04",
+      "totalTtc": "0.12"
+    }
+  ],
+  "cascadeContext": {
+    "enabled": true,
+    "defaultTaxCategoryId": "standard",
+    "taxCategories": [
+      {
+        "id": "standard",
+        "name": "Normale",
+        "ratePercent": 18
+      },
+      {
+        "id": "reduced",
+        "name": "Réduit",
+        "ratePercent": 5.5
+      },
+      {
+        "id": "exempt",
+        "name": "Exonéré",
+        "ratePercent": 0
+      },
+      {
+        "id": "norule",
+        "name": "Sans règle en vigueur",
+        "ratePercent": null
+      }
+    ],
+    "categories": [
+      {
+        "id": "food",
+        "parentId": null,
+        "taxCategoryId": "reduced"
+      },
+      {
+        "id": "rice",
+        "parentId": "food",
+        "taxCategoryId": null
+      },
+      {
+        "id": "sodas",
+        "parentId": "food",
+        "taxCategoryId": "exempt"
+      },
+      {
+        "id": "cola",
+        "parentId": "sodas",
+        "taxCategoryId": null
+      },
+      {
+        "id": "books",
+        "parentId": null,
+        "taxCategoryId": "exempt"
+      },
+      {
+        "id": "misc",
+        "parentId": null,
+        "taxCategoryId": null
+      },
+      {
+        "id": "broken",
+        "parentId": null,
+        "taxCategoryId": "norule"
+      }
+    ]
+  },
+  "cascade": [
+    {
+      "name": "l'article l'emporte sur sa catégorie",
+      "line": {
+        "taxCategoryId": "exempt",
+        "categoryId": "food"
+      },
+      "expected": {
+        "taxCategoryId": "exempt",
+        "ratePercent": 0,
+        "source": "product"
+      }
+    },
+    {
+      "name": "la catégorie quand l'article n'a pas de TVA propre",
+      "line": {
+        "categoryId": "food"
+      },
+      "expected": {
+        "taxCategoryId": "reduced",
+        "ratePercent": 5.5,
+        "source": "category"
+      }
+    },
+    {
+      "name": "hérite du parent quand la sous-catégorie n'a pas de TVA propre",
+      "line": {
+        "categoryId": "rice"
+      },
+      "expected": {
+        "taxCategoryId": "reduced",
+        "ratePercent": 5.5,
+        "source": "category"
+      }
+    },
+    {
+      "name": "la catégorie la plus proche l'emporte sur ses parents",
+      "line": {
+        "categoryId": "sodas"
+      },
+      "expected": {
+        "taxCategoryId": "exempt",
+        "ratePercent": 0,
+        "source": "category"
+      }
+    },
+    {
+      "name": "la catégorie la plus proche, deux niveaux plus haut",
+      "line": {
+        "categoryId": "cola"
+      },
+      "expected": {
+        "taxCategoryId": "exempt",
+        "ratePercent": 0,
+        "source": "category"
+      }
+    },
+    {
+      "name": "retombe sur le défaut de la boutique (catégorie sans TVA)",
+      "line": {
+        "categoryId": "misc"
+      },
+      "expected": {
+        "taxCategoryId": "standard",
+        "ratePercent": 18,
+        "source": "shop"
+      }
+    },
+    {
+      "name": "article sans catégorie : défaut de la boutique",
+      "line": {},
+      "expected": {
+        "taxCategoryId": "standard",
+        "ratePercent": 18,
+        "source": "shop"
+      }
+    },
+    {
+      "name": "ligne libre (aucun produit) : défaut de la boutique",
+      "hasProduct": false,
+      "line": {},
+      "expected": {
+        "taxCategoryId": "standard",
+        "ratePercent": 18,
+        "source": "shop"
+      }
+    },
+    {
+      "name": "un taux 0 % explicite est une vraie TVA à 0, pas une absence de TVA",
+      "line": {
+        "categoryId": "books"
+      },
+      "expected": {
+        "taxCategoryId": "exempt",
+        "ratePercent": 0,
+        "source": "category"
+      }
+    },
+    {
+      "name": "boutique sans TVA activée : jamais de TVA, même avec une TVA sur l'article",
+      "contextOverride": {
+        "enabled": false
+      },
+      "line": {
+        "taxCategoryId": "standard"
+      },
+      "expected": null
+    },
+    {
+      "name": "sans défaut ni TVA propre : pas de TVA (jamais un taux 0 implicite)",
+      "contextOverride": {
+        "defaultTaxCategoryId": null
+      },
+      "line": {
+        "categoryId": "misc"
+      },
+      "expected": null
+    },
+    {
+      "name": "article dont la catégorie fiscale n'a pas de taux en vigueur : pas de repli sur sa catégorie",
+      "line": {
+        "taxCategoryId": "norule",
+        "categoryId": "food"
+      },
+      "expected": null
+    },
+    {
+      "name": "catégorie fiscale inconnue : pas de TVA",
+      "line": {
+        "taxCategoryId": "ghost"
+      },
+      "expected": null
+    },
+    {
+      "name": "catégorie dont la TVA n'a pas de taux en vigueur : pas de repli sur la boutique",
+      "line": {
+        "categoryId": "broken"
+      },
+      "expected": null
+    }
+  ]
+}

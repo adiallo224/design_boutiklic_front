@@ -1,0 +1,10 @@
+{
+  "extends": "expo/tsconfig.base",
+  "compilerOptions": {
+    "strict": true,
+    // Requis par les modèles WatermelonDB (@field, @date... cf. lib/watermelon/models) — decorators
+    // "legacy" (cf. babel.config.js), incompatibles avec la sémantique standard des class fields.
+    "experimentalDecorators": true,
+    "useDefineForClassFields": false
+  }
+}

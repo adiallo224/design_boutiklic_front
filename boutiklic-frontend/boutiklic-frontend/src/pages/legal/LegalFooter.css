@@ -1,0 +1,16 @@
+.legal-footer { margin-top: 64px; border-top: 1px solid #E8E4DF; background: #FAF8F5; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
+.legal-footer * { box-sizing: border-box; }
+.legal-footer a { color: inherit; text-decoration: none; }
+.legal-footer-inner { max-width: 80rem; margin: 0 auto; padding: 40px 16px; display: flex; flex-direction: column; align-items: center; justify-content: space-between; gap: 24px; }
+.legal-footer-brand { display: flex; align-items: center; gap: 12px; font-size: 14px; color: #64748B; }
+.legal-footer-brand span:first-child { width: 24px; height: 24px; border-radius: 6px; background: #0F172A; color: #fff; font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+.legal-footer nav { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px 24px; font-size: 12px; font-weight: 500; color: #475569; }
+.legal-footer nav a:hover { color: #020617; }
+.legal-footer nav .legal-footer-current { font-weight: 600; color: #0F172A; }
+
+@media (min-width: 640px) {
+  .legal-footer-inner { padding-left: 24px; padding-right: 24px; flex-direction: row; }
+}
+@media (min-width: 1024px) {
+  .legal-footer-inner { padding-left: 32px; padding-right: 32px; }
+}

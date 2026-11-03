@@ -1,0 +1,131 @@
+/* CGV (maquette study/web/condition_de_vente) — scopé sous .terms-page ; l'en-tête réutilise .legal-top de LegalPage.css. */
+html:has(.terms-page) { scroll-behavior: smooth; }
+
+.terms-page {
+  --accent: #C25E2E;
+  user-select: text; /* le shell applique body{user-select:none} pour le POS ; ces pages sont à lire/copier */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #FAF8F5;
+  color: #1E293B;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+}
+.terms-page * { box-sizing: border-box; }
+.terms-page a { color: inherit; text-decoration: none; }
+.terms-page h1, .terms-page h2, .terms-page h3, .terms-page h4, .terms-page p { margin: 0; }
+.terms-page .tp-container { max-width: 80rem; margin: 0 auto; padding: 0 16px; }
+.terms-page .legal-top { background: rgba(250, 248, 245, .9); backdrop-filter: blur(12px); border-bottom-color: #E8E4DF; }
+
+.terms-page .tp-main { flex: 1; width: 100%; max-width: 64rem; margin: 0 auto; padding: 40px 16px; }
+
+/* ---------- Hero ---------- */
+.terms-page .tp-hero { display: flex; flex-direction: column; align-items: flex-start; gap: 24px; margin-bottom: 48px; }
+.terms-page .tp-eyebrow { display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 999px; background: #FFF6EE; border: 1px solid #F6D7C3; color: var(--accent); font-size: 12px; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; }
+.terms-page .tp-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+.terms-page .tp-title-block { display: flex; flex-direction: column; gap: 12px; }
+.terms-page .tp-title-block h1 { font-size: 36px; font-weight: 800; letter-spacing: -.025em; line-height: 1.15; color: #0F172A; }
+.terms-page .tp-title-block h1 span { color: var(--accent); }
+.terms-page .tp-title-block p { max-width: 48rem; font-size: 18px; line-height: 1.65; color: #475569; }
+.terms-page .tp-updated { display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 500; color: #64748B; }
+.terms-page .tp-updated svg { color: #94A3B8; }
+.terms-page .tp-updated strong { color: #334155; font-weight: 700; }
+.terms-page .tp-alert { width: 100%; display: flex; align-items: flex-start; gap: 16px; padding: 16px 20px; border-radius: 16px; border: 1px solid rgba(253, 230, 138, .9); background: rgba(255, 251, 235, .7); box-shadow: 0 1px 2px rgba(0, 0, 0, .04); }
+.terms-page .tp-alert-icon { width: 36px; height: 36px; border-radius: 12px; background: #FEF3C7; color: #B45309; display: flex; align-items: center; justify-content: center; flex: none; }
+.terms-page .tp-alert h4 { font-size: 14px; font-weight: 600; color: #78350F; }
+.terms-page .tp-alert p { margin-top: 2px; font-size: 14px; line-height: 1.6; color: rgba(146, 64, 14, .9); }
+
+/* ---------- Sommaire ---------- */
+.terms-page .tp-toc { margin-bottom: 56px; }
+.terms-page .tp-toc-box { background: #F4EFEA; border: 1px solid #E8E2D9; border-radius: 16px; padding: 24px; }
+.terms-page .tp-toc-title { display: flex; align-items: center; gap: 8px; margin-bottom: 16px; font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #334155; }
+.terms-page .tp-toc-title svg { color: var(--accent); }
+.terms-page .tp-toc nav { display: grid; grid-template-columns: 1fr; gap: 12px; }
+.terms-page .tp-toc nav a { display: flex; flex-direction: column; justify-content: space-between; gap: 4px; background: #fff; border: 1px solid #E2DDD5; border-radius: 12px; padding: 12px; transition: border-color .15s; }
+.terms-page .tp-toc nav a:hover { border-color: var(--accent); }
+.terms-page .tp-toc nav a span:first-child { font-size: 12px; font-weight: 700; color: var(--accent); }
+.terms-page .tp-toc nav a span:last-child { font-size: 14px; font-weight: 600; color: #1E293B; transition: color .15s; }
+.terms-page .tp-toc nav a:hover span:last-child { color: var(--accent); }
+
+/* ---------- Cartes ---------- */
+.terms-page .tp-sections { display: flex; flex-direction: column; gap: 40px; }
+.terms-page .tp-card { background: #fff; border: 1px solid #E8E4DF; border-radius: 16px; padding: 24px; box-shadow: 0 1px 3px rgba(0, 0, 0, .06), 0 1px 2px rgba(0, 0, 0, .04); scroll-margin-top: 90px; }
+.terms-page .tp-card-head { display: flex; align-items: center; gap: 14px; margin-bottom: 24px; }
+.terms-page .tp-card-head span { width: 32px; height: 32px; border-radius: 8px; background: #0F172A; color: #fff; font-weight: 700; font-size: 14px; display: flex; align-items: center; justify-content: center; flex: none; }
+.terms-page .tp-card-head h2 { font-size: 24px; font-weight: 700; letter-spacing: -.01em; color: #0F172A; }
+.terms-page .tp-lead { margin-bottom: 24px; font-size: 16px; font-weight: 500; line-height: 1.65; color: #475569; }
+.terms-page .tp-line { margin-bottom: 16px; font-weight: 500; color: #334155; }
+.terms-page .tp-todo { background: #FEF3C7; color: #78350F; padding: 2px 8px; border-radius: 4px; font-size: 14px; font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; }
+
+.terms-page .tp-modules { display: grid; grid-template-columns: 1fr; gap: 16px; padding-top: 8px; }
+.terms-page .tp-module { display: flex; align-items: flex-start; gap: 12px; padding: 16px; border-radius: 12px; background: #FAF8F5; border: 1px solid #ECE7E0; }
+.terms-page .tp-module-icon { padding: 8px; border-radius: 8px; background: #fff; border: 1px solid #E0D9CF; color: var(--accent); display: flex; flex: none; }
+.terms-page .tp-module h3 { font-size: 14px; font-weight: 700; color: #1E293B; }
+.terms-page .tp-module p { margin-top: 4px; font-size: 12px; color: #64748B; }
+
+.terms-page .tp-recap { margin-top: 24px; border: 1px solid #F1F5F9; border-radius: 12px; background: rgba(248, 250, 252, .7); padding: 20px; display: flex; flex-direction: column; gap: 16px; }
+.terms-page .tp-recap h4 { font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: #64748B; }
+.terms-page .tp-recap > div { display: grid; grid-template-columns: 1fr; gap: 16px; font-size: 14px; color: #475569; }
+.terms-page .tp-recap-item { background: #fff; padding: 16px; border-radius: 8px; border: 1px solid #E2E8F0; }
+.terms-page .tp-recap-item span { display: block; margin-bottom: 4px; font-size: 12px; color: #94A3B8; }
+.terms-page .tp-recap-item strong { color: #1E293B; }
+.terms-page .tp-recap-item p { margin-top: 4px; font-size: 12px; color: #64748B; }
+
+.terms-page .tp-box { margin-top: 16px; padding: 16px; border-radius: 12px; font-size: 14px; line-height: 1.7; color: #475569; display: flex; flex-direction: column; gap: 8px; }
+.terms-page .tp-box-sand { background: #FAF8F5; border: 1px solid #ECE7E0; }
+.terms-page .tp-box-slate { background: #F8FAFC; border: 1px solid #E2E8F0; }
+
+.terms-page .tp-duties { display: grid; grid-template-columns: 1fr; gap: 16px; margin-top: 16px; }
+.terms-page .tp-duties > div { padding: 16px; border-radius: 12px; border: 1px solid #E2E8F0; background: #fff; }
+.terms-page .tp-duties h4 { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; font-size: 14px; font-weight: 700; color: #0F172A; }
+.terms-page .tp-duties p { font-size: 12px; line-height: 1.65; color: #475569; }
+.terms-page .tp-bullet { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+.terms-page .tp-bullet-green { background: #10B981; }
+.terms-page .tp-bullet-blue { background: #3B82F6; }
+
+/* ---------- Bloc sombre ---------- */
+.terms-page .tp-cta { position: relative; overflow: hidden; margin-top: 64px; background: #121316; color: #fff; border: 1px solid #1E293B; border-radius: 24px; padding: 32px; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, .1), 0 8px 10px -6px rgba(0, 0, 0, .1); }
+.terms-page .tp-glow { position: absolute; right: -80px; bottom: -80px; width: 320px; height: 320px; border-radius: 50%; background: rgba(194, 94, 46, .2); filter: blur(64px); pointer-events: none; }
+.terms-page .tp-cta-inner { position: relative; z-index: 1; max-width: 42rem; display: flex; flex-direction: column; align-items: flex-start; }
+.terms-page .tp-cta-tag { font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--accent); }
+.terms-page .tp-cta h3 { margin: 8px 0 12px; font-size: 24px; font-weight: 800; color: #fff; }
+.terms-page .tp-cta p { margin-bottom: 32px; font-size: 15px; line-height: 1.65; color: #94A3B8; }
+.terms-page .tp-btn-white { display: inline-flex; align-items: center; gap: 8px; padding: 14px 24px; border-radius: 12px; background: #fff; color: #020617; font-size: 14px; font-weight: 600; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, .1); transition: background .15s, transform .1s; }
+.terms-page .tp-btn-white:hover { background: #F1F5F9; }
+.terms-page .tp-btn-white:active { transform: scale(.95); }
+
+.terms-page .legal-footer { margin-top: 64px; }
+
+/* ---------- Responsive ---------- */
+@media (min-width: 640px) {
+  .terms-page .tp-container { padding: 0 24px; }
+  .terms-page .tp-main { padding-left: 24px; padding-right: 24px; }
+  .terms-page .tp-title-block h1 { font-size: 48px; }
+  .terms-page .tp-title-block p { font-size: 20px; }
+  .terms-page .tp-toc-box { padding: 28px; }
+  .terms-page .tp-toc nav { grid-template-columns: 1fr 1fr; }
+  .terms-page .tp-card { padding: 36px; }
+  .terms-page .tp-recap > div { grid-template-columns: repeat(3, 1fr); }
+  .terms-page .tp-cta { padding: 48px; }
+  .terms-page .tp-cta h3 { font-size: 30px; }
+  .terms-page .tp-cta p { font-size: 16px; }
+}
+@media (min-width: 768px) {
+  .terms-page .tp-toc nav { grid-template-columns: repeat(3, 1fr); }
+  .terms-page .tp-modules { grid-template-columns: repeat(3, 1fr); }
+  .terms-page .tp-duties { grid-template-columns: 1fr 1fr; }
+}
+@media (min-width: 1024px) {
+  .terms-page .tp-container { padding: 0 32px; }
+  .terms-page .tp-main { padding: 64px 32px; }
+  .terms-page .tp-toc nav { grid-template-columns: repeat(5, 1fr); }
+}
+
+/* Petits écrans : titres plus compacts, aucun mot long (e-mail, URL) ne déborde. */
+.terms-page .tp-main { overflow-wrap: anywhere; }
+@media (max-width: 400px) {
+  .terms-page .tp-title-block h1 { font-size: 28px; }
+  .terms-page .tp-main { padding: 28px 14px; }
+}

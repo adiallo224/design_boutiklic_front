@@ -1,0 +1,115 @@
+/* Mentions légales (maquette study/web/mentions_legales) — scopé sous .legal-notice-page ; l'en-tête réutilise .legal-top de LegalPage.css. */
+html:has(.legal-notice-page) { scroll-behavior: smooth; }
+
+.legal-notice-page {
+  user-select: text; /* le shell applique body{user-select:none} pour le POS ; ces pages sont à lire/copier */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #FAF8F5;
+  color: #18181B;
+  font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+}
+.legal-notice-page * { box-sizing: border-box; }
+.legal-notice-page a { color: inherit; text-decoration: none; }
+.legal-notice-page ::selection { background: #141414; color: #fff; }
+.legal-notice-page h1, .legal-notice-page h2, .legal-notice-page h3, .legal-notice-page p { margin: 0; }
+.legal-notice-page .ln-container { max-width: 80rem; margin: 0 auto; padding: 0 24px; }
+.legal-notice-page .legal-top { background: rgba(250, 248, 245, .9); backdrop-filter: blur(12px); border-bottom-color: #EFE9DF; }
+
+.legal-notice-page .ln-main { flex: 1; width: 100%; max-width: 64rem; margin: 0 auto; padding: 48px 24px 96px; }
+
+/* ---------- Hero ---------- */
+.legal-notice-page .ln-hero { display: flex; flex-direction: column; align-items: flex-start; gap: 24px; margin-bottom: 48px; }
+.legal-notice-page .ln-eyebrow { display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 999px; background: #F4EFE6; border: 1px solid #E9E2D5; color: #EA580C; font-size: 12px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; }
+.legal-notice-page .ln-dot { width: 6px; height: 6px; border-radius: 50%; background: #EA580C; }
+.legal-notice-page .ln-hero h1 { font-size: 36px; font-weight: 800; letter-spacing: -.025em; line-height: 1.12; color: #141414; }
+.legal-notice-page .ln-hero h1 span { color: #EA580C; }
+.legal-notice-page .ln-intro { margin-top: -12px; max-width: 48rem; font-size: 18px; line-height: 1.65; color: #52525B; }
+.legal-notice-page .ln-updated { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 500; color: #71717A; }
+.legal-notice-page .ln-updated svg { color: #A1A1AA; }
+.legal-notice-page .ln-alert { width: 100%; display: flex; align-items: flex-start; gap: 14px; padding: 16px 20px; border-radius: 16px; background: #FFFBF0; border: 1px solid #FDE68A; color: #92400E; box-shadow: 0 1px 2px rgba(0, 0, 0, .04); }
+.legal-notice-page .ln-alert svg { color: #D97706; flex: none; margin-top: 2px; }
+.legal-notice-page .ln-alert p { font-size: 15px; line-height: 1.6; }
+
+/* ---------- Sommaire ---------- */
+.legal-notice-page .ln-toc { margin-bottom: 48px; background: rgba(243, 237, 226, .7); border: 1px solid #E7DFD2; border-radius: 16px; padding: 16px; }
+.legal-notice-page .ln-toc h2 { font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #71717A; margin-bottom: 12px; }
+.legal-notice-page .ln-toc ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr; gap: 10px; }
+.legal-notice-page .ln-toc a { display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: #141414; background: rgba(255, 255, 255, .7); padding: 10px 14px; border: 1px solid transparent; border-radius: 12px; transition: all .15s; }
+.legal-notice-page .ln-toc a:hover { color: #EA580C; background: #fff; border-color: #E5DDD0; }
+.legal-notice-page .ln-toc a span { font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; font-size: 12px; color: #EA580C; }
+
+/* ---------- Cartes ---------- */
+.legal-notice-page .ln-sections { display: flex; flex-direction: column; gap: 32px; }
+.legal-notice-page .ln-card { background: #fff; border: 1px solid #EFEBE1; border-radius: 24px; padding: 24px; box-shadow: 0 1px 3px rgba(0, 0, 0, .03), 0 1px 2px -1px rgba(0, 0, 0, .03); scroll-margin-top: 90px; }
+.legal-notice-page .ln-card-head { display: flex; align-items: center; gap: 14px; padding-bottom: 24px; margin-bottom: 24px; border-bottom: 1px solid #F4EFE6; }
+.legal-notice-page .ln-num { width: 36px; height: 36px; border-radius: 12px; background: #F4EFE6; color: #141414; display: flex; align-items: center; justify-content: center; font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; font-weight: 700; font-size: 16px; flex: none; }
+.legal-notice-page .ln-card-head h2 { font-size: 22px; font-weight: 700; letter-spacing: -.01em; color: #141414; }
+
+.legal-notice-page .ln-grid { display: grid; grid-template-columns: 1fr; gap: 24px 32px; font-size: 14px; }
+.legal-notice-page .ln-field { background: #FAF8F5; border: 1px solid #F0EBE0; border-radius: 16px; padding: 16px; }
+.legal-notice-page .ln-field-label { display: block; margin-bottom: 4px; font-size: 12px; font-weight: 500; letter-spacing: .05em; text-transform: uppercase; color: #71717A; }
+.legal-notice-page .ln-field-value { font-size: 16px; font-weight: 600; color: #141414; word-break: break-word; }
+.legal-notice-page .ln-address { display: flex; align-items: center; gap: 8px; font-weight: 500; }
+.legal-notice-page .ln-address svg { color: #EA580C; flex: none; }
+.legal-notice-page .ln-chips { display: flex; flex-wrap: wrap; gap: 8px; padding-top: 4px; font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; font-size: 14px; font-weight: 500; }
+.legal-notice-page .ln-chips span { padding: 4px 12px; background: #fff; border: 1px solid #E7DFD2; border-radius: 8px; }
+
+.legal-notice-page .ln-text { font-size: 16px; line-height: 1.65; color: #52525B; margin-bottom: 24px; }
+.legal-notice-page .ln-text strong, .legal-notice-page .ln-prose strong { color: #141414; font-weight: 700; }
+.legal-notice-page .ln-host { display: flex; flex-direction: column; gap: 16px; background: #FAF8F5; border: 1px solid #F0EBE0; border-radius: 16px; padding: 20px; }
+.legal-notice-page .ln-host h3 { font-size: 18px; font-weight: 700; color: #141414; margin-bottom: 4px; }
+.legal-notice-page .ln-host p { font-size: 14px; color: #52525B; }
+.legal-notice-page .ln-host .ln-host-small { font-size: 12px; color: #71717A; margin-top: 4px; }
+.legal-notice-page .ln-btn-light { align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; background: #fff; border: 1px solid #E7DFD2; border-radius: 12px; font-size: 12px; font-weight: 600; color: #141414; box-shadow: 0 1px 2px rgba(0, 0, 0, .04); transition: background .15s; }
+.legal-notice-page .ln-btn-light:hover { background: #F4EFE6; }
+
+.legal-notice-page .ln-prose { display: flex; flex-direction: column; gap: 16px; font-size: 15px; line-height: 1.7; color: #52525B; }
+.legal-notice-page .ln-note { background: #FAF8F5; border-left: 4px solid #141414; border-radius: 0 12px 12px 0; padding: 16px; }
+.legal-notice-page .ln-note p { font-size: 13px; color: #4B5563; }
+.legal-notice-page .ln-cta-row { padding-top: 8px; display: flex; flex-wrap: wrap; align-items: center; gap: 16px; }
+.legal-notice-page .ln-btn-dark { display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; border-radius: 999px; background: #141414; color: #fff; font-size: 13px; font-weight: 600; transition: background .15s; }
+.legal-notice-page .ln-btn-dark:hover { background: #262626; }
+
+/* ---------- Bloc sombre ---------- */
+.legal-notice-page .ln-dark { position: relative; overflow: hidden; background: #141414; color: #fff; border-radius: 24px; padding: 32px; scroll-margin-top: 90px; }
+.legal-notice-page .ln-glow { position: absolute; right: -40px; bottom: -40px; width: 240px; height: 240px; border-radius: 50%; background: rgba(234, 88, 12, .2); filter: blur(64px); pointer-events: none; }
+.legal-notice-page .ln-dark-inner { position: relative; z-index: 1; max-width: 42rem; display: flex; flex-direction: column; gap: 16px; }
+.legal-notice-page .ln-dark-tag { align-self: flex-start; padding: 4px 12px; border-radius: 999px; background: rgba(255, 255, 255, .1); color: rgba(255, 255, 255, .9); font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+.legal-notice-page .ln-dark h2 { font-size: 24px; font-weight: 700; letter-spacing: -.01em; color: #fff; }
+.legal-notice-page .ln-dark p { font-size: 15px; line-height: 1.65; color: #D4D4D8; }
+.legal-notice-page .ln-btn-white { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 999px; background: #fff; color: #141414; font-size: 14px; font-weight: 600; box-shadow: 0 1px 2px rgba(0, 0, 0, .1); transition: background .15s; }
+.legal-notice-page .ln-btn-white:hover { background: #F4F4F5; }
+
+.legal-notice-page .ln-dark .ln-dark-hint { font-size: 12px; color: #A1A1AA; }
+
+/* ---------- Responsive ---------- */
+@media (min-width: 640px) {
+  .legal-notice-page .ln-hero h1 { font-size: 48px; }
+  .legal-notice-page .ln-intro { font-size: 20px; }
+  .legal-notice-page .ln-toc { padding: 24px; }
+  .legal-notice-page .ln-toc ul { grid-template-columns: 1fr 1fr; }
+  .legal-notice-page .ln-card { padding: 36px; }
+  .legal-notice-page .ln-prose { font-size: 16px; }
+  .legal-notice-page .ln-host { flex-direction: row; align-items: center; justify-content: space-between; padding: 24px; }
+  .legal-notice-page .ln-btn-light { align-self: center; }
+  .legal-notice-page .ln-dark { padding: 40px; }
+  .legal-notice-page .ln-dark h2 { font-size: 30px; }
+}
+@media (min-width: 768px) {
+  .legal-notice-page .ln-toc ul { grid-template-columns: repeat(3, 1fr); }
+  .legal-notice-page .ln-grid { grid-template-columns: 1fr 1fr; }
+  .legal-notice-page .ln-wide { grid-column: span 2; }
+}
+@media (min-width: 1024px) {
+  .legal-notice-page .ln-hero h1 { font-size: 54px; }
+}
+
+/* Petits écrans : titres plus compacts, aucun mot long (e-mail, URL) ne déborde. */
+.legal-notice-page { overflow-wrap: anywhere; }
+@media (max-width: 400px) {
+  .legal-notice-page .ln-hero h1 { font-size: 28px; }
+}

@@ -1,0 +1,117 @@
+@import "tailwindcss";
+@import "flag-icons/css/flag-icons.min.css";
+@import "./desktop/print.css";
+
+@theme {
+  /* Palette BOUTIKLIC */
+  --color-indigo: #0E2038;
+  --color-terracotta: #D84E2A;
+  --color-emeraude: #0E7A52;
+  --color-or: #E69D3B;
+  --color-violet: #7B5EA7;
+  --color-terra-soft: #FFECE6;
+  --color-ink-300: #A2A9B8;
+  --color-encre: #111418;
+  --color-papier: #FFFDFA;
+  --color-fond-boutique: #FBF8F2;
+  --color-fond-planche: #F4EDE0;
+
+  /* Bordures (forte -> capillaire) */
+  --color-border-strong: #EADBCA;
+  --color-border: #E9DFD2;
+  --color-border-hairline: #F2EAE0;
+
+  /* Texte */
+  --color-text-secondary: #676E7E;
+  --color-text-placeholder: #A2A9B8;
+
+  /* États */
+  --color-danger: #C6362F;
+  --color-alerte-bg: #FEF4E6;
+  --color-alerte-text: #8A6712;
+  --color-info-bg: #EAF0F7;
+  --color-info-border: #D3DFEC;
+  --color-info-text: #0E2038;
+  --color-succes-bg: #E6F1EC;
+  --color-succes-text: #1F5C43;
+
+  /* Alias sémantiques utilisés dans les composants */
+  --color-primary: #0E2038;
+  --color-primary-dark: #081321;
+  --color-primary-light: #234570;
+  --color-bg: #FBF8F2;
+  --color-bg-card: #FFFDFA;
+  --color-bg-elevated: #F4EDE0;
+  --color-border-default: #EADBCA;
+  --color-text: #111418;
+  --color-text-muted: #676E7E;
+  --color-text-dim: #A2A9B8;
+  --color-success: #0E7A52;
+  --color-warning: #E69D3B;
+  --color-info: #0E2038;
+  --color-cash: #0E7A52;
+  --color-mobile-money: #0E2038;
+  --color-debt: #D84E2A;
+  --color-gnf: #E69D3B;
+  --color-fcfa: #0E2038;
+
+  /* Accents de groupe (A-F) */
+  --color-group-a: #0E2038;
+  --color-group-b: #D84E2A;
+  --color-group-c: #E69D3B;
+  --color-group-d: #0E7A52;
+  --color-group-e: #7B5EA7;
+  --color-group-f: #111418;
+
+  --font-display: 'Plus Jakarta Sans', sans-serif;
+  --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    background-color: #FBF8F2;
+    color: #111418;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    overscroll-behavior-y: none;
+    user-select: none;
+  }
+
+  input, button {
+    font-family: inherit;
+  }
+
+  /* Montants monétaires : chiffres tabulaires + séparateur français */
+  .amount {
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.01em;
+  }
+
+  /* Hide scrollbar but keep functionality */
+  ::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 16px);
+  }
+
+  .safe-top {
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+}

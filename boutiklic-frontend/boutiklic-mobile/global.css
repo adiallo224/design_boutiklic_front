@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Sans ça, les View flex-1 (ex. FlatList caisse) n'ont pas de hauteur bornée sur web : elles
+   grandissent avec leur contenu au lieu de scroller dans leur zone, et poussent le reste de
+   l'écran vers le bas. */
+html, body, #root {
+  height: 100%;
+}

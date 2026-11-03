@@ -1,0 +1,6 @@
+# Sortie de build et dépendances de la vitrine (hors workspaces: son propre node_modules)
+/node_modules
+/.next
+/out
+next-env.d.ts
+*.tsbuildinfo

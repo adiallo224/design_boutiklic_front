@@ -1,0 +1,172 @@
+/* Page Contact (maquette study/web/contact_interface) — tout est scopé sous .contact-page : aucune fuite vers l'app. */
+html:has(.contact-page) { scroll-behavior: smooth; }
+
+.contact-page {
+  --sand-50: #FDFCF9;
+  --sand-100: #F8F5EE;
+  --sand-200: #EFE9DE;
+  --terra-500: #DE5D3D;
+  --terra-600: #C84D2F;
+  --terra-700: #A93B20;
+  --forest-600: #166534;
+  --forest-700: #14532D;
+  --stone-950: #0C0A09;
+  --stone-900: #1C1917;
+  --stone-800: #292524;
+  --stone-700: #44403C;
+  --stone-600: #57534E;
+  --stone-500: #78716C;
+  --stone-400: #A8A29E;
+  --stone-300: #D6D3D1;
+  --stone-200: #E7E5E4;
+
+  user-select: text; /* le shell applique body{user-select:none} pour le POS ; ici on veut pouvoir copier un numéro */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--sand-100);
+  color: var(--stone-900);
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+}
+.contact-page * { box-sizing: border-box; }
+.contact-page a { color: inherit; text-decoration: none; }
+.contact-page ::selection { background: var(--terra-500); color: #fff; }
+.contact-page h1, .contact-page h2, .contact-page p { margin: 0; }
+.contact-page .cp-container { max-width: 80rem; margin: 0 auto; padding: 0 24px; }
+.contact-page .cp-sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+.contact-page .cp-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--terra-500); display: inline-block; flex: none; }
+.contact-page .cp-dot-green { background: #10B981; }
+.contact-page .cp-pulse { animation: cp-pulse 2s cubic-bezier(.4, 0, .6, 1) infinite; }
+@keyframes cp-pulse { 50% { opacity: .4; } }
+
+/* ---------- Contenu ---------- */
+.contact-page .cp-main { flex: 1; padding: 48px 0; }
+.contact-page .cp-hero { max-width: 48rem; margin-bottom: 48px; }
+.contact-page .cp-badge { display: inline-flex; align-items: center; gap: 8px; padding: 4px 12px; border-radius: 6px; background: rgba(231, 229, 228, .7); border: 1px solid rgba(214, 211, 209, .5); margin-bottom: 16px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: var(--terra-600); }
+.contact-page .cp-hero h1 { font-size: 36px; font-weight: 800; letter-spacing: -.025em; line-height: 1.12; color: var(--stone-950); }
+.contact-page .cp-hero p { margin-top: 16px; font-size: 18px; color: var(--stone-600); line-height: 1.65; }
+.contact-page .cp-hero strong { font-weight: 600; color: var(--stone-800); }
+
+.contact-page .cp-grid { display: grid; grid-template-columns: 1fr; gap: 32px; align-items: start; }
+.contact-page .cp-form-col { order: 1; }
+.contact-page .cp-aside { order: 2; display: flex; flex-direction: column; gap: 16px; }
+
+/* ---------- Cartes de canaux ---------- */
+.contact-page .cp-card { background: rgba(255, 255, 255, .9); border: 1px solid rgba(231, 229, 228, .9); border-radius: 16px; padding: 24px; box-shadow: 0 2px 10px rgba(0, 0, 0, .02), 0 10px 25px -5px rgba(0, 0, 0, .04); transition: box-shadow .2s; }
+.contact-page .cp-card:hover { box-shadow: 0 8px 30px rgba(0, 0, 0, .04); }
+.contact-page .cp-card-row { display: flex; align-items: flex-start; gap: 16px; }
+.contact-page .cp-between { justify-content: space-between; }
+.contact-page .cp-grow { flex: 1; }
+.contact-page .cp-card-body { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.contact-page .cp-card-body.cp-grow { gap: 12px; }
+.contact-page .cp-card h2 { font-size: 16px; font-weight: 700; color: var(--stone-900); }
+.contact-page .cp-muted { font-size: 14px; color: var(--stone-600); line-height: 1.35; }
+.contact-page .cp-small { font-size: 12px; font-weight: 500; color: var(--stone-700); padding-top: 4px; }
+.contact-page .cp-icon { width: 44px; height: 44px; border-radius: 12px; flex: none; display: flex; align-items: center; justify-content: center; border: 1px solid; transition: transform .2s; }
+.contact-page .cp-card:hover .cp-icon { transform: scale(1.05); }
+.contact-page .cp-icon-blue { background: #EFF6FF; color: #2563EB; border-color: #DBEAFE; }
+.contact-page .cp-icon-amber { background: #FFFBEB; color: #B45309; border-color: #FEF3C7; }
+.contact-page .cp-icon-emerald { background: #ECFDF5; color: #059669; border-color: #D1FAE5; }
+.contact-page .cp-icon-orange { background: #FFF7ED; color: #EA580C; border-color: #FFEDD5; }
+.contact-page .cp-phone { font-size: 16px; font-weight: 500; color: var(--stone-700); margin-top: 2px; transition: color .15s; word-break: break-word; }
+.contact-page .cp-phone:hover { color: var(--terra-600); }
+.contact-page .cp-pill { display: inline-flex; align-items: center; gap: 6px; padding: 2px 10px; border-radius: 999px; font-size: 12px; font-weight: 600; background: #F5F5F4; color: var(--stone-600); white-space: nowrap; }
+.contact-page .cp-pill-green { background: #ECFDF5; color: #047857; padding: 2px 8px; }
+.contact-page .cp-wa-number { font-size: 14px; font-weight: 500; color: var(--stone-700); }
+.contact-page .cp-btn-green { align-self: flex-start; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 10px 16px; background: var(--forest-600); color: #fff; font-weight: 700; font-size: 14px; border-radius: 12px; box-shadow: 0 1px 2px rgba(0, 0, 0, .1); transition: background .15s, transform .1s; }
+.contact-page .cp-btn-green:hover { background: var(--forest-700); }
+.contact-page .cp-btn-green:active { transform: scale(.98); }
+.contact-page .cp-hours { font-size: 14px; color: var(--stone-600); }
+.contact-page .cp-hours strong { font-weight: 500; color: var(--stone-700); }
+.contact-page .cp-banner { display: flex; align-items: center; gap: 12px; padding: 16px; border-radius: 16px; background: rgba(239, 233, 222, .6); border: 1px solid rgba(214, 211, 209, .4); font-size: 12px; font-weight: 500; color: var(--stone-600); }
+.contact-page .cp-banner svg { color: var(--terra-600); flex: none; }
+
+/* ---------- Formulaire ---------- */
+.contact-page .cp-form-card { background: #fff; border-radius: 24px; padding: 28px; border: 1px solid rgba(231, 229, 228, .9); box-shadow: 0 20px 40px -15px rgba(24, 24, 27, .07); }
+.contact-page .cp-form { display: flex; flex-direction: column; gap: 24px; }
+.contact-page .cp-row { display: grid; grid-template-columns: 1fr; gap: 20px; }
+.contact-page .cp-field { display: flex; flex-direction: column; }
+.contact-page .cp-field > label, .contact-page .cp-label { display: block; font-size: 14px; font-weight: 700; color: var(--stone-800); margin-bottom: 8px; }
+.contact-page .cp-req { color: var(--terra-600); }
+.contact-page .cp-optional { font-size: 12px; font-weight: 400; color: var(--stone-500); }
+.contact-page .cp-field input[type='text'],
+.contact-page .cp-field input[type='email'],
+.contact-page .cp-field input[type='tel'],
+.contact-page .cp-field select,
+.contact-page .cp-field textarea {
+  width: 100%; font: inherit; font-size: 14px; color: var(--stone-900);
+  background: rgba(253, 252, 249, .5); border: 1px solid var(--stone-200); border-radius: 12px;
+  padding: 12px 16px; transition: border-color .15s, box-shadow .15s;
+}
+.contact-page .cp-field textarea { resize: vertical; padding: 16px; min-height: 110px; }
+.contact-page .cp-field input::placeholder, .contact-page .cp-field textarea::placeholder { color: var(--stone-400); }
+.contact-page .cp-field input:focus, .contact-page .cp-field select:focus, .contact-page .cp-field textarea:focus {
+  outline: none; border-color: var(--terra-500); box-shadow: 0 0 0 4px rgba(222, 93, 61, .12);
+}
+.contact-page .cp-select { position: relative; }
+.contact-page .cp-select select { appearance: none; -webkit-appearance: none; padding-right: 40px; font-weight: 500; color: var(--stone-800); }
+.contact-page .cp-select svg { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); color: var(--stone-500); pointer-events: none; }
+.contact-page .cp-hint { margin-top: 6px; font-size: 12px; color: var(--stone-500); }
+
+.contact-page .cp-drop { display: flex; flex-direction: column; align-items: center; gap: 4px; text-align: center; padding: 20px 24px 24px; border: 2px dashed var(--stone-200); border-radius: 16px; background: rgba(253, 252, 249, .3); color: var(--stone-400); cursor: pointer; transition: border-color .15s, color .15s; }
+.contact-page .cp-drop:hover, .contact-page .cp-drop-over { border-color: var(--stone-400); color: var(--stone-600); }
+.contact-page .cp-drop:focus-visible { outline: 2px solid var(--terra-500); outline-offset: 2px; }
+.contact-page .cp-drop p { font-size: 12px; color: var(--stone-600); }
+.contact-page .cp-drop-link { font-weight: 700; color: var(--terra-600); }
+.contact-page .cp-drop:hover .cp-drop-link { color: var(--terra-700); }
+.contact-page .cp-drop .cp-drop-hint { font-size: 11px; color: var(--stone-400); }
+.contact-page .cp-files { list-style: none; margin: 10px 0 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.contact-page .cp-files li { display: flex; align-items: center; justify-content: space-between; gap: 10px; background: var(--sand-200); border-radius: 10px; padding: 8px 12px; font-size: 14px; word-break: break-all; }
+.contact-page .cp-files em { font-style: normal; color: var(--stone-500); }
+.contact-page .cp-files button { background: transparent; border: 0; color: var(--stone-500); font-weight: 700; cursor: pointer; padding: 2px 8px; border-radius: 8px; }
+.contact-page .cp-files button:hover { color: var(--terra-700); }
+
+.contact-page .cp-submit { padding-top: 8px; }
+.contact-page .cp-btn-dark { width: 100%; min-width: 200px; display: inline-flex; align-items: center; justify-content: center; gap: 12px; padding: 16px 32px; border: 0; border-radius: 12px; background: var(--stone-900); color: #fff; font: inherit; font-size: 16px; font-weight: 700; cursor: pointer; box-shadow: 0 10px 15px -3px rgba(28, 25, 23, .1); transition: background .15s, box-shadow .15s, transform .1s; }
+.contact-page .cp-btn-dark:hover:not(:disabled) { background: var(--stone-800); box-shadow: 0 20px 25px -5px rgba(28, 25, 23, .15); }
+.contact-page .cp-btn-dark:active:not(:disabled) { transform: scale(.99); }
+.contact-page .cp-btn-dark:focus-visible { outline: none; box-shadow: 0 0 0 4px rgba(168, 162, 158, .3); }
+.contact-page .cp-btn-dark:disabled { opacity: .5; cursor: not-allowed; }
+.contact-page .cp-privacy { margin-top: 12px; display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--stone-500); }
+.contact-page .cp-privacy svg { color: var(--stone-400); flex: none; }
+
+.contact-page .cp-error { background: #FFECE6; border: 1px solid var(--terra-500); border-radius: 10px; padding: 10px 14px; font-size: 14px; margin-top: 8px; }
+.contact-page .cp-form > .cp-error { margin-top: 0; }
+.contact-page .cp-success { background: #ECFDF5; border: 1px solid #10B981; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 6px; }
+.contact-page .cp-success strong { font-size: 18px; }
+
+/* Honeypot : hors écran plutôt que display:none (certains robots ignorent les champs masqués par display). */
+.contact-page .cp-hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+.contact-page .legal-footer { margin-top: 0; }
+
+/* ---------- Responsive ---------- */
+@media (min-width: 640px) {
+  .contact-page .cp-hero h1 { font-size: 48px; }
+  .contact-page .cp-hero p { font-size: 20px; }
+  .contact-page .cp-form-card { padding: 40px; }
+  .contact-page .cp-row { grid-template-columns: 1fr 1fr; }
+  .contact-page .cp-btn-dark { width: auto; }
+}
+@media (min-width: 768px) {
+  .contact-page .cp-main { padding: 64px 0; }
+}
+@media (min-width: 1024px) {
+  .contact-page .cp-container { padding: 0 32px; }
+  .contact-page .cp-main { padding: 80px 0; }
+  .contact-page .cp-hero { margin-bottom: 64px; }
+  .contact-page .cp-hero h1 { font-size: 60px; }
+  .contact-page .cp-grid { grid-template-columns: 5fr 7fr; gap: 48px; }
+  .contact-page .cp-aside { order: 1; }
+  .contact-page .cp-form-col { order: 2; }
+}
+
+/* Petits écrans : titre plus compact, aucun mot long (e-mail, URL) ne déborde, bouton sans largeur minimale forcée. */
+.contact-page { overflow-wrap: anywhere; }
+@media (max-width: 400px) {
+  .contact-page .cp-hero h1 { font-size: 28px; }
+  .contact-page .cp-btn-dark { min-width: 0; padding: 14px 20px; }
+}

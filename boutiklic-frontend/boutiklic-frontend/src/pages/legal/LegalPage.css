@@ -1,0 +1,47 @@
+html:has(.legal-page) { scroll-behavior: smooth; }
+
+.legal-page {
+  user-select: text; /* le shell applique body{user-select:none} pour le POS ; ces pages sont à lire/copier */
+  min-height: 100vh;
+  background: #FBF8F2;
+  color: #111418;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+.legal-page * { box-sizing: border-box; }
+.legal-page a { color: inherit; text-decoration: none; }
+
+.legal-wrap { max-width: 760px; margin: 0 auto; padding: 0 16px; }
+
+.legal-top { border-bottom: 1px solid rgba(14, 32, 56, 0.10); background: #FBF8F2; position: sticky; top: 0; z-index: 5; }
+.legal-top-inner { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+.legal-brand { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 20px; color: #0E2038; }
+.legal-back { font-size: 14px; font-weight: 600; color: #B93B1A; }
+.legal-back:hover { text-decoration: underline; }
+
+.legal-main { padding-top: 40px; padding-bottom: 56px; }
+.legal-main h1 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(28px, 5vw, 40px); line-height: 1.15; color: #0E2038; margin: 0 0 12px; }
+.legal-intro { font-size: 17px; color: #3E434D; margin: 0 0 8px; }
+.legal-updated { font-size: 13px; color: #676E7E; margin: 0 0 20px; }
+
+.legal-draft { background: #FEF4E6; border: 1px solid #E69D3B; border-radius: 10px; padding: 10px 14px; font-size: 13.5px; margin-bottom: 28px; }
+
+.legal-toc { background: #F4EDE0; border-radius: 16px; padding: 16px 20px; margin-bottom: 32px; }
+.legal-toc ol { margin: 0; padding-left: 20px; }
+.legal-toc a { color: #234570; font-weight: 600; }
+.legal-toc a:hover { text-decoration: underline; }
+
+.legal-main section { margin-bottom: 28px; scroll-margin-top: 80px; }
+.legal-main h2 { font-family: 'Space Grotesk', sans-serif; font-size: 21px; color: #0E2038; margin: 0 0 8px; }
+.legal-main section p { margin: 0 0 10px; color: #3E434D; }
+
+.legal-foot { border-top: 1px solid rgba(14, 32, 56, 0.10); padding-top: 20px; padding-bottom: 32px; font-size: 13px; color: #676E7E; }
+.legal-foot nav { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-bottom: 10px; }
+.legal-foot nav a:hover { color: #B93B1A; text-decoration: underline; }
+
+/* Petits écrans : aucun mot long ne déborde ; le tableau/pied reste dans la largeur. */
+.legal-main { overflow-wrap: anywhere; }
+@media (max-width: 400px) {
+  .legal-top-inner { height: auto; min-height: 56px; flex-wrap: wrap; gap: 6px 12px; padding: 6px 0; }
+}
